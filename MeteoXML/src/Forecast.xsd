@@ -1,0 +1,111 @@
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="weatherdata">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="location">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="name" type="xsd:string" />
+              <xsd:element name="type" type="xsd:string" />
+              <xsd:element name="country" type="xsd:string" />
+              <xsd:element name="timezone" type="xsd:string" />
+              <xsd:element name="location">
+                <xsd:complexType>
+                  <xsd:attribute name="altitude" type="xsd:int" />
+                  <xsd:attribute name="latitude" type="xsd:decimal" />
+                  <xsd:attribute name="longitude" type="xsd:decimal" />
+                  <xsd:attribute name="geobase" type="xsd:string" />
+                  <xsd:attribute name="geobaseid" type="xsd:int" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="credit" type="xsd:string" />
+        <xsd:element name="meta">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="lastupdate" type="xsd:string" />
+              <xsd:element name="calctime" type="xsd:decimal" />
+              <xsd:element name="nextupdate" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="sun">
+          <xsd:complexType>
+            <xsd:attribute name="rise" type="xsd:dateTime" />
+            <xsd:attribute name="set" type="xsd:dateTime" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="forecast">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element maxOccurs="unbounded" name="time">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="symbol">
+                      <xsd:complexType>
+                        <xsd:attribute name="number" type="xsd:int" />
+                        <xsd:attribute name="name" type="xsd:string" />
+                        <xsd:attribute name="var" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="precipitation">
+                      <xsd:complexType>
+                        <xsd:attribute name="unit" type="xsd:string" />
+                        <xsd:attribute name="value" type="xsd:decimal" />
+                        <xsd:attribute name="type" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="windDirection">
+                      <xsd:complexType>
+                        <xsd:attribute name="deg" type="xsd:decimal" />
+                        <xsd:attribute name="code" type="xsd:string" />
+                        <xsd:attribute name="name" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="windSpeed">
+                      <xsd:complexType>
+                        <xsd:attribute name="mps" type="xsd:decimal" />
+                        <xsd:attribute name="name" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="temperature">
+                      <xsd:complexType>
+                        <xsd:attribute name="unit" type="xsd:string" />
+                        <xsd:attribute name="value" type="xsd:decimal" />
+                        <xsd:attribute name="min" type="xsd:decimal" />
+                        <xsd:attribute name="max" type="xsd:decimal" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="pressure">
+                      <xsd:complexType>
+                        <xsd:attribute name="unit" type="xsd:string" />
+                        <xsd:attribute name="value" type="xsd:decimal" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="humidity">
+                      <xsd:complexType>
+                        <xsd:attribute name="value" type="xsd:int" />
+                        <xsd:attribute name="unit" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="clouds">
+                      <xsd:complexType>
+                        <xsd:attribute name="value" type="xsd:string" />
+                        <xsd:attribute name="all" type="xsd:int" />
+                        <xsd:attribute name="unit" type="xsd:string" />
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="from" type="xsd:dateTime" />
+                  <xsd:attribute name="to" type="xsd:dateTime" />
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
