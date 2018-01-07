@@ -53,6 +53,7 @@ public class Controll implements ActionListener{
 		}
 		w.getPnlSigla().setVisible(false);
 		w.getPnlMain().setVisible(true);
+		w.getTfCitta().requestFocus();
 	}
 
 	@SuppressWarnings("serial")
@@ -101,7 +102,9 @@ public class Controll implements ActionListener{
 					unit=" "+c.getPressure().getUnit();
 					w.getLblPressione2().setText(""+c.getPressure().getValue()+unit);
 					
-					w.getLblNomeVento2().setText(""+c.getWind().getSpeed().getName());
+					w.getLblMeteo2().setText(nameTranslate(""+c.getWeather().getValue()));
+					
+					w.getLblNomeVento2().setText(nameTranslate(""+c.getWind().getSpeed().getName()));
 					w.getLblVelocitaVento2().setText(""+c.getWind().getSpeed().getValue());
 					w.getLblDirezioneVento2().setText(""+c.getWind().getDirection().getValue()+
 							" "+c.getWind().getDirection().getName());
@@ -214,7 +217,9 @@ public class Controll implements ActionListener{
 						unit=" "+c.getForecast().getTime().get(sel).getPressure().getUnit();
 						w.getLblPressione2().setText(""+c.getForecast().getTime().get(sel).getPressure().getValue()+unit);
 						
-						w.getLblNomeVento2().setText(""+c.getForecast().getTime().get(sel).getWindSpeed().getName());
+						w.getLblMeteo2().setText(nameTranslate(""+c.getForecast().getTime().get(sel).getSymbol().getName()));
+						
+						w.getLblNomeVento2().setText(nameTranslate(""+c.getForecast().getTime().get(sel).getWindSpeed().getName()));
 						w.getLblVelocitaVento2().setText(""+c.getForecast().getTime().get(sel).getWindSpeed().getMps());
 						w.getLblDirezioneVento2().setText(""+c.getForecast().getTime().get(sel).getWindDirection().getDeg()+
 								" "+c.getForecast().getTime().get(sel).getWindDirection().getName());
@@ -257,11 +262,48 @@ public class Controll implements ActionListener{
 		}
 	}
 	
-	public static String removeCharAt(String s, int pos) {
+	private static String removeCharAt(String s, int pos) {
 		return s.substring(0, pos) + s.substring(pos + 1);
 	}
 	
-	public static String arrotondamento(String s) {
+	private static String nameTranslate(String name) {
+		String s="";
+		if(name.equals("Calm") || name.equals(""))
+			s="Calmo";
+		else if((name.toLowerCase()).equals("light breeze"))
+			s="Leggera Brezza";
+		else if((name.toLowerCase()).equals("gentle breeze"))
+			s="Dolce Brezza";
+		else if((name.toLowerCase()).equals("moderate breeze"))
+			s="Brezza Moderata";
+		else if((name.toLowerCase()).equals("fresh breeze"))
+			s="Brezza Fredda";
+		else if((name.toLowerCase()).equals("fog"))
+			s="Nebbia";
+		else if((name.toLowerCase()).equals("light snow"))
+			s="Neve Leggera";
+		else if((name.toLowerCase()).equals("moderate snow"))
+			s="Neve";
+		else if((name.toLowerCase()).equals("overcast clouds"))
+			s="Nuvoloso";
+		else if((name.toLowerCase()).equals("scattered clouds") || (name.toLowerCase()).equals("broken clouds"))
+			s="Nuvole Sparse";
+		else if((name.toLowerCase()).equals("few clouds"))
+				s="Poco Nuvoloso";
+		else if((name.toLowerCase()).equals("light rain"))
+				s="Pioggia Leggera";
+		else if((name.toLowerCase()).equals("moderate rain"))
+			s="Pioggia";
+		else if((name.toLowerCase()).equals("clear sky"))
+			s="Sereno";
+		else {
+			s=name;
+			System.out.println("|"+name+"|");
+		}
+		return s;
+	}
+	
+	private static String arrotondamento(String s) {
 		boolean trov=false;
 		int i=0;
 		String s2="";
@@ -280,7 +322,7 @@ public class Controll implements ActionListener{
 		return s2;
 	}
 	
-	public static boolean connection() {
+	private static boolean connection() {
 		try {
 			URL url = new URL("http://www.google.com");
 			URLConnection uc = url.openConnection();

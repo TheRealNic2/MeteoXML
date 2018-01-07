@@ -63,6 +63,8 @@ public class Window extends JFrame {
 	private JLabel lblBackground2;
 	private JPanel pnlSigla;
 	private JLabel lblBackground1;
+	private JLabel lblMeteo;
+	private JLabel lblMeteo2;
 
 	public Window() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/partly_cloudy.png")));
@@ -185,25 +187,25 @@ public class Window extends JFrame {
 		lblVento = new JLabel("Vento");
 		lblVento.setForeground(new Color(255, 153, 0));
 		lblVento.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblVento.setBounds(393, 37, 72, 14);
+		lblVento.setBounds(394, 62, 72, 14);
 		pnlInf.add(lblVento);
 		
 		lblNomeVento = new JLabel("Nome");
 		lblNomeVento.setForeground(new Color(255, 153, 0));
 		lblNomeVento.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblNomeVento.setBounds(300, 62, 83, 14);
+		lblNomeVento.setBounds(301, 87, 83, 14);
 		pnlInf.add(lblNomeVento);
 		
 		lblVelocitaVento = new JLabel("Velocit\u00E0");
 		lblVelocitaVento.setForeground(new Color(255, 153, 0));
 		lblVelocitaVento.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblVelocitaVento.setBounds(300, 87, 83, 14);
+		lblVelocitaVento.setBounds(301, 112, 83, 14);
 		pnlInf.add(lblVelocitaVento);
 		
 		lblDirezioneVento = new JLabel("Direzione");
 		lblDirezioneVento.setForeground(new Color(255, 153, 0));
 		lblDirezioneVento.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblDirezioneVento.setBounds(300, 112, 83, 14);
+		lblDirezioneVento.setBounds(301, 137, 83, 14);
 		pnlInf.add(lblDirezioneVento);
 		
 		lblUmidita2 = new JLabel("");
@@ -221,20 +223,32 @@ public class Window extends JFrame {
 		lblNomeVento2 = new JLabel("");
 		lblNomeVento2.setForeground(new Color(255, 153, 0));
 		lblNomeVento2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblNomeVento2.setBounds(393, 62, 153, 14);
+		lblNomeVento2.setBounds(394, 87, 153, 14);
 		pnlInf.add(lblNomeVento2);
 		
 		lblVelocitaVento2 = new JLabel("");
 		lblVelocitaVento2.setForeground(new Color(255, 153, 0));
 		lblVelocitaVento2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblVelocitaVento2.setBounds(393, 87, 153, 14);
+		lblVelocitaVento2.setBounds(394, 112, 153, 14);
 		pnlInf.add(lblVelocitaVento2);
 		
 		lblDirezioneVento2 = new JLabel("");
 		lblDirezioneVento2.setForeground(new Color(255, 153, 0));
 		lblDirezioneVento2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblDirezioneVento2.setBounds(393, 112, 153, 14);
+		lblDirezioneVento2.setBounds(394, 137, 153, 14);
 		pnlInf.add(lblDirezioneVento2);
+		
+		lblMeteo = new JLabel("Meteo");
+		lblMeteo.setForeground(new Color(255, 153, 0));
+		lblMeteo.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		lblMeteo.setBounds(301, 37, 83, 14);
+		pnlInf.add(lblMeteo);
+		
+		lblMeteo2 = new JLabel("");
+		lblMeteo2.setForeground(new Color(255, 153, 0));
+		lblMeteo2.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		lblMeteo2.setBounds(394, 37, 153, 14);
+		pnlInf.add(lblMeteo2);
 		
 		btnNow = new JButton("Corrente");
 		btnNow.setBounds(77, 328, 112, 23);
@@ -409,5 +423,9 @@ public class Window extends JFrame {
 
 	public JLabel getLblOra2() {
 		return lblOra2;
+	}
+
+	public JLabel getLblMeteo2() {
+		return lblMeteo2;
 	}
 }
