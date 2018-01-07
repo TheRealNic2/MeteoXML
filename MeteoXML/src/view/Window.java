@@ -16,6 +16,7 @@ import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 @SuppressWarnings("serial")
 public class Window extends JFrame {
@@ -64,9 +65,10 @@ public class Window extends JFrame {
 	private JLabel lblBackground1;
 
 	public Window() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/partly_cloudy.png")));
 		setResizable(false);
 		this.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		setTitle("Clima byBortolan");
+		setTitle("Meteo \u03B2");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 612, 415);
 		contentPane = new JPanel();
