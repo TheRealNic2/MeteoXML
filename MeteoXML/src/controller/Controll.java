@@ -118,6 +118,7 @@ public class Controll implements ActionListener{
 			else {
 				JOptionPane.showMessageDialog(w, "Non c'è connessione ad Internet!", "ERR_INTERNET_DISCONNECTED", 0);
 			}
+			w.getTfCitta().requestFocus();
 		}
 		else if(w.getBtn5Day()==ev.getSource()) {
 			if(connection()) {
@@ -237,6 +238,7 @@ public class Controll implements ActionListener{
 			else {
 				JOptionPane.showMessageDialog(w, "Non c'è connessione ad Internet!", "ERR_INTERNET_DISCONNECTED", 0);
 			}
+			w.getTfCitta().requestFocus();
 		}
 		else if(w.getBtnClear()==ev.getSource()) {
 			w.getLblLatitudine2().setText("");
@@ -252,6 +254,8 @@ public class Controll implements ActionListener{
 			w.getLblUmidita2().setText("");
 			
 			w.getLblPressione2().setText("");
+			
+			w.getLblMeteo2().setText("");
 			
 			w.getLblNomeVento2().setText("");
 			w.getLblVelocitaVento2().setText("");
