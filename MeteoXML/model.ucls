@@ -201,7 +201,7 @@
   </class>  
   <class id="23" language="java" name="model.Weatherdata.Sun" project="MeteoXML" 
     file="/MeteoXML/src/model/Weatherdata.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1321" y="767"/>    
+    <position height="-1" width="-1" x="1315" y="588"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -255,7 +255,7 @@
   </class>  
   <class id="29" language="java" name="model.Weatherdata.Location" project="MeteoXML" 
     file="/MeteoXML/src/model/Weatherdata.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1914" y="839"/>    
+    <position height="-1" width="-1" x="1912" y="576"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -264,7 +264,7 @@
   </class>  
   <class id="30" language="java" name="model.Weatherdata.Forecast.Time" project="MeteoXML" 
     file="/MeteoXML/src/model/Weatherdata.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1568" y="1284"/>    
+    <position height="-1" width="-1" x="1304" y="1036"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -273,7 +273,7 @@
   </class>  
   <class id="31" language="java" name="model.Weatherdata.Location.LocationIn" project="MeteoXML" 
     file="/MeteoXML/src/model/Weatherdata.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1918" y="1221"/>    
+    <position height="-1" width="-1" x="2033" y="1010"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -299,349 +299,465 @@
     </display>  
   </class>  
   <association id="34">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="35" name="meta"/>      
-      <multiplicity id="36" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="37">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="4"/>  
-  </nesting>  
-  <association id="38">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="39" name="speed"/>      
-      <multiplicity id="40" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="41">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="42" name="location"/>      
-      <multiplicity id="43" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="44">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="21"/>  
-  </nesting>  
-  <association id="45">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="46" name="precipitation"/>      
-      <multiplicity id="47" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="48">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="49" name="weather"/>      
-      <multiplicity id="50" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="51">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="52" name="wind"/>      
-      <multiplicity id="53" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="54">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="55" name="visibility"/>      
-      <multiplicity id="56" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="57">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="58" name="sun"/>      
-      <multiplicity id="59" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="23" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="60">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="26"/>  
-  </nesting>  
-  <association id="61">    
-    <end type="SOURCE" refId="18" navigable="false">      
-      <attribute id="62" name="w"/>      
-      <multiplicity id="63" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="64">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="65" name="forecast"/>      
-      <multiplicity id="66" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="67">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="32"/>  
-  </nesting>  
-  <nesting id="68">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="2"/>  
-  </nesting>  
-  <association id="69">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="70" name="temperature"/>      
-      <multiplicity id="71" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="20" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="72">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="73" name="pressure"/>      
-      <multiplicity id="74" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="75">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="25"/>  
-  </nesting>  
-  <association id="76">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="77" name="temperature"/>      
-      <multiplicity id="78" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="14" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="79">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="80" name="clouds"/>      
-      <multiplicity id="81" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="82">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="23"/>  
-  </nesting>  
-  <nesting id="83">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="29"/>  
-  </nesting>  
-  <association id="84">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="85" name="humidity"/>      
-      <multiplicity id="86" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="87">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="10"/>  
-  </nesting>  
-  <nesting id="88">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="13"/>  
-  </nesting>  
-  <nesting id="89">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="5"/>  
-  </nesting>  
-  <association id="90">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="91" name="location"/>      
-      <multiplicity id="92" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="31" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="93">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="3"/>  
-  </nesting>  
-  <association id="94">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="95" name="clouds"/>      
-      <multiplicity id="96" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="97">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="98" name="symbol"/>      
-      <multiplicity id="99" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="100">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="101" name="direction"/>      
-      <multiplicity id="102" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="103">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="16"/>  
-  </nesting>  
-  <nesting id="104">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="31"/>  
-  </nesting>  
-  <nesting id="105">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="12"/>  
-  </nesting>  
-  <nesting id="106">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="6"/>  
-  </nesting>  
-  <nesting id="107">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="7"/>  
-  </nesting>  
-  <association id="108">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="109" name="windSpeed"/>      
-      <multiplicity id="110" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="33" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="111">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="112" name="pressure"/>      
-      <multiplicity id="113" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="114">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="115" name="windDirection"/>      
-      <multiplicity id="116" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="27" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="117">    
     <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="118" name="time"/>      
-      <multiplicity id="119" minimum="0" maximum="2147483647"/>    
+      <attribute id="35" name="time">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="30" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="120">    
+  <nesting id="37">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <nesting id="38">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="30"/>  
+  </nesting>  
+  <nesting id="39">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </nesting>  
+  <nesting id="40">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </nesting>  
+  <association id="41">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="42" name="pressure">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="43" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="45" name="symbol">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="46" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="48" name="speed">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="51" name="visibility">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="52" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="53">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="16"/>  
+  </nesting>  
+  <association id="54">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="55" name="location">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="56" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="57">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="15"/>  
+  </nesting>  
+  <association id="58">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="59" name="direction">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="60" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="61">    
     <end type="SOURCE" refId="30"/>    
     <end type="TARGET" refId="20"/>  
   </nesting>  
-  <nesting id="121">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="27"/>  
-  </nesting>  
-  <nesting id="122">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="22"/>  
-  </nesting>  
-  <nesting id="123">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="28"/>  
-  </nesting>  
-  <association id="124">    
+  <association id="62">    
     <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="125" name="humidity"/>      
-      <multiplicity id="126" minimum="0" maximum="1"/>    
+      <attribute id="63" name="humidity">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="64" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="32" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="127">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="15"/>  
+  <nesting id="65">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="19"/>  
   </nesting>  
-  <nesting id="128">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="33"/>  
-  </nesting>  
-  <association id="129">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="130" name="coord"/>      
-      <multiplicity id="131" minimum="0" maximum="1"/>    
+  <association id="66">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="67" name="windSpeed">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="68" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="33" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="132">    
+  <association id="69">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="133" name="sun"/>      
-      <multiplicity id="134" minimum="0" maximum="1"/>    
+      <attribute id="70" name="sun">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="135">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="136" name="precipitation"/>      
-      <multiplicity id="137" minimum="0" maximum="1"/>    
+  <nesting id="72">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="21"/>  
+  </nesting>  
+  <nesting id="73">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="13"/>  
+  </nesting>  
+  <nesting id="74">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
+  <nesting id="75">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="27"/>  
+  </nesting>  
+  <association id="76">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="77" name="sun">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="78" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
+    <end type="TARGET" refId="23" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="138">    
+  <association id="79">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="80" name="forecast">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="81" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="83" name="windDirection">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="84" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="85">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="26"/>  
+  </nesting>  
+  <association id="86">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="87" name="pressure">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="88" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="89">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="32"/>  
+  </nesting>  
+  <nesting id="90">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </nesting>  
+  <association id="91">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="92" name="wind">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="93" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="94">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="12"/>  
+  </nesting>  
+  <association id="95">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="96" name="temperature">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="97" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="98">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="99" name="w">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="100" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="101">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </nesting>  
+  <association id="102">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="103" name="clouds">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="104" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="105">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="106" name="location">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="107" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="108">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="109" name="lastupdate">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="110" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="111">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="31"/>  
+  </nesting>  
+  <nesting id="112">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="28"/>  
+  </nesting>  
+  <nesting id="113">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="22"/>  
+  </nesting>  
+  <nesting id="114">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <nesting id="115">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </nesting>  
+  <association id="116">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="117" name="clouds">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="118" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="119">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="29"/>  
+  </nesting>  
+  <nesting id="120">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
+  </nesting>  
+  <association id="121">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="122" name="precipitation">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="123" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="124">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="125" name="humidity">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="126" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="127">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="14"/>  
   </nesting>  
-  <nesting id="139">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="19"/>  
-  </nesting>  
+  <association id="128">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="129" name="weather">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="130" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="131">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="132" name="meta">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="133" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="134">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="135" name="temperature">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="136" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="137">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="138" name="coord">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="139" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <nesting id="140">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="30"/>  
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="25"/>  
   </nesting>  
   <association id="141">    
     <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="142" name="city"/>      
-      <multiplicity id="143" minimum="0" maximum="1"/>    
+      <attribute id="142" name="city">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="143" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <nesting id="144">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="9"/>  
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="33"/>  
   </nesting>  
-  <association id="145">    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="146" name="lastupdate"/>      
-      <multiplicity id="147" minimum="0" maximum="1"/>    
+  <nesting id="145">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="23"/>  
+  </nesting>  
+  <association id="146">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="147" name="precipitation">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="148" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
+    <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="148">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="11"/>  
-  </nesting>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
