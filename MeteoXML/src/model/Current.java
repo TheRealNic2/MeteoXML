@@ -1083,7 +1083,7 @@ public class Current {
     public static class Pressure {
 
         @XmlAttribute(name = "value")
-        protected Integer value;
+        protected float value;
         @XmlAttribute(name = "unit")
         protected String unit;
 
@@ -1095,7 +1095,7 @@ public class Current {
          *     {@link Integer }
          *     
          */
-        public Integer getValue() {
+        public float getValue() {
             return value;
         }
 

@@ -113,6 +113,7 @@ public class Controll implements ActionListener{
 	
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(w, "Città NON Trovata.", "NotFound", 0);
+					e.printStackTrace();
 				}
 			}
 			else {
@@ -300,6 +301,8 @@ public class Controll implements ActionListener{
 			s="Pioggia";
 		else if((name.toLowerCase()).equals("clear sky"))
 			s="Sereno";
+		else if((name.toLowerCase()).equals("mist"))
+			s="Variabile";
 		else {
 			s=name;
 			System.out.println("|"+name+"|");
