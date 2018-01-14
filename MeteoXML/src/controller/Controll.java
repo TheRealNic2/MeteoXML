@@ -39,7 +39,7 @@ public class Controll implements ActionListener{
 		w.getBtnClear().addActionListener(this);
 
 		w.setVisible(true);
-		/*try {
+		try {
 		     URL defaultSound = getClass().getResource("/sounds/Meteo5.wav");
 		     AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(defaultSound);
 		     Clip clip = AudioSystem.getClip();
@@ -52,7 +52,7 @@ public class Controll implements ActionListener{
 			Thread.sleep(8000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}*/
+		}
 		w.getPnlSigla().setVisible(false);
 		w.getPnlMain().setVisible(true);
 		w.getTfCitta().requestFocus();
