@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -28,7 +30,7 @@ public class Controll implements ActionListener{
 	
 	private Window w;
 	private String apiKey="19cfabb7e54e881ddc9edf8780ad2181";
-	
+	private static int meteo;
 	public Controll(Window w) {
 		this.w=w;
 		
@@ -37,7 +39,7 @@ public class Controll implements ActionListener{
 		w.getBtnClear().addActionListener(this);
 
 		w.setVisible(true);
-		try {
+		/*try {
 		     URL defaultSound = getClass().getResource("/sounds/Meteo5.wav");
 		     AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(defaultSound);
 		     Clip clip = AudioSystem.getClip();
@@ -50,7 +52,7 @@ public class Controll implements ActionListener{
 			Thread.sleep(8000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		}
+		}*/
 		w.getPnlSigla().setVisible(false);
 		w.getPnlMain().setVisible(true);
 		w.getTfCitta().requestFocus();
@@ -88,6 +90,22 @@ public class Controll implements ActionListener{
 					s=""+Float.parseFloat(""+(Float.parseFloat(""+c.getTemperature().getValue())-273));
 					s=arrotondamento(s);
 					w.getLblTemperatura2().setText(""+s+" "+unit);
+					Image image = null;
+					if(Float.parseFloat(s)>=35) {
+						image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/013-temperaturaAlta.png"));
+					}
+					else if(Float.parseFloat(s)>=15 && Float.parseFloat(s)<35) {
+						image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/014-temperaturaMedia.png"));
+					}
+					else if(Float.parseFloat(s)>=0 && Float.parseFloat(s)<15) {
+						image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/015-temperaturaBassa.png"));
+					}
+					else if(Float.parseFloat(s)<0) {
+						image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/016-temperaturaBassissima.png"));
+					}
+					image = image.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
+					ImageIcon icon = new ImageIcon(image);
+					w.getLblTemperaturaImage().setIcon(icon);
 					
 					s=""+Float.parseFloat(""+(Float.parseFloat(""+c.getTemperature().getMax())-273));
 					s=arrotondamento(s);
@@ -103,6 +121,49 @@ public class Controll implements ActionListener{
 					w.getLblPressione2().setText(""+c.getPressure().getValue()+unit);
 					
 					w.getLblMeteo2().setText(nameTranslate(""+c.getWeather().getValue()));
+					boolean isDay=false;
+					if(c.getLastupdate().getValue().getHour()>6 && c.getLastupdate().getValue().getHour()<=18)
+						isDay=true;
+					image = null;
+					if(Controll.meteo==1) {
+						if(isDay)
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/001-sereno.png"));
+						else
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/009-sereno2.png"));
+					}
+					else if(Controll.meteo==2) {
+						if(isDay)
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/002-nuvoleSparse.png"));
+						else
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/010-nuvoleSparse2.png"));
+					}
+					else if(Controll.meteo==3) {
+						if(isDay)
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/003-nuvoloso.png"));
+						else
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/011-nuvoloso2.png"));
+					}
+					else if(Controll.meteo==4) {
+						image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/004-pioggiaLeggera.png"));
+					}
+					else if(Controll.meteo==5) {
+						image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/005-pioggia.png"));
+					}
+					else if(Controll.meteo==6) {
+						if(isDay)
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/006-nebbia.png"));
+						else
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/012-nebbia2.png"));
+					}
+					else if(Controll.meteo==7) {
+						image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/007-nevicataLeggera.png"));
+					}
+					else if(Controll.meteo==8) {
+						image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/008-nevicata.png"));
+					}
+					image = image.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
+					icon = new ImageIcon(image);
+					w.getLblMeteoImage().setIcon(icon);
 					
 					w.getLblNomeVento2().setText(nameTranslate(""+c.getWind().getSpeed().getName()));
 					w.getLblVelocitaVento2().setText(""+c.getWind().getSpeed().getValue());
@@ -205,6 +266,22 @@ public class Controll implements ActionListener{
 						s=""+(Float.parseFloat(""+c.getForecast().getTime().get(sel).getTemperature().getValue())-273);
 						s=arrotondamento(s);
 						w.getLblTemperatura2().setText(""+s+" "+unit);
+						Image image = null;
+						if(Float.parseFloat(s)>=35) {
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/013-temperaturaAlta.png"));
+						}
+						else if(Float.parseFloat(s)>=15 && Float.parseFloat(s)<35) {
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/014-temperaturaMedia.png"));
+						}
+						else if(Float.parseFloat(s)>=0 && Float.parseFloat(s)<15) {
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/015-temperaturaBassa.png"));
+						}
+						else if(Float.parseFloat(s)<0) {
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/016-temperaturaBassissima.png"));
+						}
+						image = image.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
+						ImageIcon icon = new ImageIcon(image);
+						w.getLblTemperaturaImage().setIcon(icon);
 						
 						s=""+(Float.parseFloat(""+c.getForecast().getTime().get(sel).getTemperature().getMax())-273);
 						s=arrotondamento(s);
@@ -220,6 +297,49 @@ public class Controll implements ActionListener{
 						w.getLblPressione2().setText(""+c.getForecast().getTime().get(sel).getPressure().getValue()+unit);
 						
 						w.getLblMeteo2().setText(nameTranslate(""+c.getForecast().getTime().get(sel).getSymbol().getName()));
+						boolean isDay=false;
+						if(c.getForecast().getTime().get(sel).getFrom().getHour()>6 && c.getForecast().getTime().get(sel).getFrom().getHour()<=18)
+							isDay=true;
+						image = null;
+						if(Controll.meteo==1) {
+							if(isDay)
+								image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/001-sereno.png"));
+							else
+								image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/009-sereno2.png"));
+						}
+						else if(Controll.meteo==2) {
+							if(isDay)
+								image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/002-nuvoleSparse.png"));
+							else
+								image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/010-nuvoleSparse2.png"));
+						}
+						else if(Controll.meteo==3) {
+							if(isDay)
+								image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/003-nuvoloso.png"));
+							else
+								image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/011-nuvoloso2.png"));
+						}
+						else if(Controll.meteo==4) {
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/004-pioggiaLeggera.png"));
+						}
+						else if(Controll.meteo==5) {
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/005-pioggia.png"));
+						}
+						else if(Controll.meteo==6) {
+							if(isDay)
+								image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/006-nebbia.png"));
+							else
+								image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/012-nebbia2.png"));
+						}
+						else if(Controll.meteo==7) {
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/007-nevicataLeggera.png"));
+						}
+						else if(Controll.meteo==8) {
+							image = java.awt.Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/008-nevicata.png"));
+						}
+						image = image.getScaledInstance(50, 50, Image.SCALE_DEFAULT);
+						icon = new ImageIcon(image);
+						w.getLblMeteoImage().setIcon(icon);
 						
 						w.getLblNomeVento2().setText(nameTranslate(""+c.getForecast().getTime().get(sel).getWindSpeed().getName()));
 						w.getLblVelocitaVento2().setText(""+c.getForecast().getTime().get(sel).getWindSpeed().getMps());
@@ -271,7 +391,7 @@ public class Controll implements ActionListener{
 		return s.substring(0, pos) + s.substring(pos + 1);
 	}
 	
-	private static String nameTranslate(String name) {
+	private String nameTranslate(String name) {
 		String s="";
 		if(name.equals("Calm") || name.equals(""))
 			s="Calmo";
@@ -283,26 +403,46 @@ public class Controll implements ActionListener{
 			s="Brezza Moderata";
 		else if((name.toLowerCase()).equals("fresh breeze"))
 			s="Brezza Fredda";
-		else if((name.toLowerCase()).equals("fog"))
-			s="Nebbia";
-		else if((name.toLowerCase()).equals("light snow"))
-			s="Neve Leggera";
-		else if((name.toLowerCase()).equals("moderate snow"))
-			s="Neve";
-		else if((name.toLowerCase()).equals("overcast clouds"))
-			s="Nuvoloso";
-		else if((name.toLowerCase()).equals("scattered clouds") || (name.toLowerCase()).equals("broken clouds"))
-			s="Nuvole Sparse";
-		else if((name.toLowerCase()).equals("few clouds"))
-				s="Poco Nuvoloso";
-		else if((name.toLowerCase()).equals("light rain"))
-				s="Pioggia Leggera";
-		else if((name.toLowerCase()).equals("moderate rain"))
-			s="Pioggia";
-		else if((name.toLowerCase()).equals("clear sky"))
+		else if((name.toLowerCase()).equals("clear sky")) {
 			s="Sereno";
-		else if((name.toLowerCase()).equals("mist"))
+			Controll.meteo=1;
+		}
+		else if((name.toLowerCase()).equals("scattered clouds") || (name.toLowerCase()).equals("broken clouds")) {
+			s="Nuvole Sparse";
+			Controll.meteo=2;
+		}
+		else if((name.toLowerCase()).equals("few clouds")) {
+			s="Poco Nuvoloso";
+			Controll.meteo=2;
+		}
+		else if((name.toLowerCase()).equals("mist")) {
 			s="Variabile";
+			Controll.meteo=2;
+		}
+		else if((name.toLowerCase()).equals("overcast clouds")) {
+			s="Nuvoloso";
+			Controll.meteo=3;
+		}
+		else if((name.toLowerCase()).equals("light rain")) {
+			s="Pioggia Leggera";
+			Controll.meteo=4;
+		}
+		else if((name.toLowerCase()).equals("moderate rain")) {
+			s="Pioggia";
+			Controll.meteo=5;
+		}
+		else if((name.toLowerCase()).equals("fog")) {
+			s="Nebbia";
+			Controll.meteo=6;
+		}
+		else if((name.toLowerCase()).equals("light snow")) {
+			s="Nevicata Leggera";
+			Controll.meteo=7;
+		}
+		else if((name.toLowerCase()).equals("moderate snow")) {
+			s="Nevicata";
+			Controll.meteo=8;
+		}
 		else {
 			s=name;
 			System.out.println("|"+name+"|");
@@ -322,10 +462,12 @@ public class Controll implements ActionListener{
 				i++;
 			}
 		}
-		if(trov==true) {
-			s2=s2+s.charAt(i+1)+s.charAt(i+2);
-		}
-		
+		try {
+			if(trov==true) {
+				s2=s2+s.charAt(i+1);
+				s2=s2+s.charAt(i+2);
+			}
+		} catch(Exception e) {}
 		return s2;
 	}
 	

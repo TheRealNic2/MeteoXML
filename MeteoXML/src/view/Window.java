@@ -17,6 +17,7 @@ import javax.swing.SwingConstants;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
+import javax.swing.border.LineBorder;
 
 @SuppressWarnings("serial")
 public class Window extends JFrame {
@@ -60,11 +61,13 @@ public class Window extends JFrame {
 	private JLabel lblData2;
 	private JLabel lblOra2;
 	private JPanel pnlMain;
-	private JLabel lblBackground2;
 	private JPanel pnlSigla;
 	private JLabel lblBackground1;
 	private JLabel lblMeteo;
 	private JLabel lblMeteo2;
+	private JLabel lblTemperaturaImage;
+	private JLabel lblMeteoImage;
+	private JLabel lblNewLabel;
 
 	public Window() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Window.class.getResource("/image/partly_cloudy.png")));
@@ -157,19 +160,19 @@ public class Window extends JFrame {
 		lblTemperatura2 = new JLabel("");
 		lblTemperatura2.setForeground(new Color(255, 153, 0));
 		lblTemperatura2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblTemperatura2.setBounds(139, 37, 115, 14);
+		lblTemperatura2.setBounds(139, 37, 77, 14);
 		pnlInf.add(lblTemperatura2);
 		
 		lblTemperaturaMinima2 = new JLabel("");
 		lblTemperaturaMinima2.setForeground(new Color(255, 153, 0));
 		lblTemperaturaMinima2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblTemperaturaMinima2.setBounds(139, 62, 115, 14);
+		lblTemperaturaMinima2.setBounds(139, 62, 77, 14);
 		pnlInf.add(lblTemperaturaMinima2);
 		
 		lblTemperaturaMassima2 = new JLabel("");
 		lblTemperaturaMassima2.setForeground(new Color(255, 153, 0));
 		lblTemperaturaMassima2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblTemperaturaMassima2.setBounds(139, 87, 115, 14);
+		lblTemperaturaMassima2.setBounds(139, 87, 77, 14);
 		pnlInf.add(lblTemperaturaMassima2);
 		
 		lblUmidita = new JLabel("Umidit\u00E0");
@@ -187,7 +190,7 @@ public class Window extends JFrame {
 		lblVento = new JLabel("Vento");
 		lblVento.setForeground(new Color(255, 153, 0));
 		lblVento.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblVento.setBounds(394, 62, 72, 14);
+		lblVento.setBounds(348, 62, 72, 14);
 		pnlInf.add(lblVento);
 		
 		lblNomeVento = new JLabel("Nome");
@@ -211,13 +214,13 @@ public class Window extends JFrame {
 		lblUmidita2 = new JLabel("");
 		lblUmidita2.setForeground(new Color(255, 153, 0));
 		lblUmidita2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblUmidita2.setBounds(139, 112, 115, 14);
+		lblUmidita2.setBounds(139, 112, 77, 14);
 		pnlInf.add(lblUmidita2);
 		
 		lblPressione2 = new JLabel("");
 		lblPressione2.setForeground(new Color(255, 153, 0));
 		lblPressione2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblPressione2.setBounds(139, 137, 115, 14);
+		lblPressione2.setBounds(139, 137, 77, 14);
 		pnlInf.add(lblPressione2);
 		
 		lblNomeVento2 = new JLabel("");
@@ -247,8 +250,22 @@ public class Window extends JFrame {
 		lblMeteo2 = new JLabel("");
 		lblMeteo2.setForeground(new Color(255, 153, 0));
 		lblMeteo2.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		lblMeteo2.setBounds(394, 37, 153, 14);
+		lblMeteo2.setBounds(394, 37, 103, 14);
 		pnlInf.add(lblMeteo2);
+		
+		lblTemperaturaImage = new JLabel("");
+		lblTemperaturaImage.setBackground(new Color(0, 0, 0));
+		lblTemperaturaImage.setOpaque(true);
+		lblTemperaturaImage.setBounds(226, 37, 55, 55);
+		lblTemperaturaImage.setBorder(new LineBorder(new Color(128, 0, 0), 2));
+		pnlInf.add(lblTemperaturaImage);
+		
+		lblMeteoImage = new JLabel("");
+		lblMeteoImage.setBackground(new Color(0, 0, 0));
+		lblMeteoImage.setOpaque(true);
+		lblMeteoImage.setBounds(511, 37, 55, 55);
+		lblMeteoImage.setBorder(new LineBorder(new Color(128, 0, 0), 2));
+		pnlInf.add(lblMeteoImage);
 		
 		btnNow = new JButton("Corrente");
 		btnNow.setBounds(77, 328, 112, 23);
@@ -328,10 +345,10 @@ public class Window extends JFrame {
 		tfCitta.setBounds(10, 72, 136, 20);
 		pnlCitta.add(tfCitta);
 		
-		lblBackground2 = new JLabel("");
-		lblBackground2.setIcon(new ImageIcon(Window.class.getResource("/image/Background.jpg")));
-		lblBackground2.setBounds(0, 0, 606, 387);
-		pnlMain.add(lblBackground2);
+		lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(Window.class.getResource("/image/Background.jpg")));
+		lblNewLabel.setBounds(0, 0, 606, 387);
+		pnlMain.add(lblNewLabel);
 		
 		pnlSigla = new JPanel();
 		pnlSigla.setBounds(0, 0, 606, 387);
@@ -427,5 +444,13 @@ public class Window extends JFrame {
 
 	public JLabel getLblMeteo2() {
 		return lblMeteo2;
+	}
+
+	public JLabel getLblTemperaturaImage() {
+		return lblTemperaturaImage;
+	}
+
+	public JLabel getLblMeteoImage() {
+		return lblMeteoImage;
 	}
 }
