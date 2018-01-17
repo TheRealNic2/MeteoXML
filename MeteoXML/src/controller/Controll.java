@@ -382,6 +382,9 @@ public class Controll implements ActionListener{
 			w.getLblVelocitaVento2().setText("");
 			w.getLblDirezioneVento2().setText("");
 			
+			w.getLblTemperaturaImage().setIcon(null);
+			w.getLblMeteoImage().setIcon(null);
+			
 			w.getTfCitta().setText("");
 			w.getTfCitta().requestFocus();
 		}
